@@ -18,6 +18,9 @@ knitr::opts_chunk$set(
 ## Overview
 
 <!-- badges: start -->
+
+[![DOI](https://zenodo.org/badge/1155337591.svg)](https://doi.org/10.5281/zenodo.18610484)
+
 <!-- badges: end -->
 
 This repository contains the file information of the Orti Bali Corpus, which consists of newspaper articles from the Orti Bali newspaper. 
