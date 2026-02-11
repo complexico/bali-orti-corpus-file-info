@@ -43,3 +43,19 @@ I collected the corpus texts manually (through a classic copy-and-paste procedur
 It is important to note that the [current Orti Bali](https://balitv.tv/category/news/orti-bali/) webpage does not host the complete archive of the newspaper articles that are part of this corpus. The old Orti Bali webpage (I worked with) only hosted articles published between the stated periods above (i.e., between `r corpus_year_span$starting_year` and `r corpus_year_span$ending_year`) and stopped working in 2014.
 
 For copyright reasons, I cannot share the actual text files of the corpus, and I only use this corpus for my personal research. However, I provide the file information (i.e., text title, file size, modification time, etc.) in the `baliorti_file_info.tsv` file. The word counts of each text file are also provided in the `baliorti_wcount.tsv` file.
+
+The violin plot beleow visualises the distribution of word counts across different years (of publication of the news) in the corpus. The mean word count for each year is indicated by the diamond shape.
+
+```{r violin-plot, message = FALSE, warning = FALSE, echo = FALSE, fig.dpi = 600}
+library(tidyverse)
+wc <- read_tsv("baliorti_wcount.tsv")
+wc |> 
+  mutate(year_folder = factor(year_folder)) |> 
+  # group_by(year_folder) |> 
+  # summarise(avg = round(mean(word_count), 1)) |> 
+  ggplot(aes(x = year_folder, y = word_count)) +
+  geom_violin(fill = "lightblue", color = "royalblue", alpha = 0.5) +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 2) +
+  labs(x = "Year", y = "Word Count")
+```
+

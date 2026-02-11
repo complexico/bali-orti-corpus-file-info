@@ -33,3 +33,9 @@ corpus, and I only use this corpus for my personal research. However, I
 provide the file information (i.e., text title, file size, modification
 time, etc.) in the `baliorti_file_info.tsv` file. The word counts of
 each text file are also provided in the `baliorti_wcount.tsv` file.
+
+The violin plot beleow visualises the distribution of word counts across
+different years (of publication of the news) in the corpus. The mean
+word count for each year is indicated by the diamond shape.
+
+![](README_files/figure-gfm/violin-plot-1.png)<!-- -->
