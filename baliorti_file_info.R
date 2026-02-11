@@ -17,5 +17,10 @@ for (i in seq_along(year_folder)) {
   
 }
 
-corpus_file_info |> list_rbind() |> 
+corpus_file_info |> 
+  list_rbind() |> 
+  group_by(year_folder) |> 
+  arrange(modification_time) |> 
+  mutate(user = "Gede Primahadi W. Rajeg",
+         group = "CompLexico") |> 
   write_tsv("baliorti_file_info.tsv")
