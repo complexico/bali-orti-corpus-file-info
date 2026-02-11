@@ -1,0 +1,45 @@
+---
+output: github_document
+title: "File Info for the Orti Bali Corpus"
+author: '[Gede Primahadi W.
+Rajeg](https://www.ling-phil.ox.ac.uk/people/gede-rajeg)
+<a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a></br>Udayana University'
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This repository contains the file information of the Orti Bali Corpus, which consists of newspaper articles from the Orti Bali newspaper. 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+time_collection <- readr::read_tsv("baliorti_file_info.tsv") |> 
+  dplyr::summarise(
+    starting_time = min(modification_time),
+    ending_time = max(modification_time)
+  )
+
+corpus_year_span <- readr::read_tsv("baliorti_file_info.tsv") |> 
+  dplyr::mutate(year = as.integer(stringr::str_remove(year_folder, "^y_"))) |> 
+  dplyr::summarise(
+    starting_year = min(year),
+    ending_year = max(year)
+  )
+```
+
+
+I collected the corpus texts manually (through a classic copy-and-paste procedure) between **`r format(time_collection$starting_time, "%d %B %Y")`** and **`r format(time_collection$ending_time, "%d %B %Y")`**, for the news texts published in the old Orti Bali webpage between **`r corpus_year_span$starting_year` and `r corpus_year_span$ending_year`**.
+
+It is important to note that the [current Orti Bali](https://balitv.tv/category/news/orti-bali/) webpage does not host the complete archive of the newspaper articles that are part of this corpus. The old Orti Bali webpage only hosted articles published between the stated periods above (i.e., between `r corpus_year_span$starting_year` and `r corpus_year_span$ending_year`) and stopped working in 2014.
+
+For copyright reasons, I cannot share the actual text files of the corpus, and I only use this corpus for my personal research. However, I provide the file information (i.e., text title, file size, modification time, etc.) in the `baliorti_file_info.tsv` file.
