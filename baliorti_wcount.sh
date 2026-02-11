@@ -1,3 +1,5 @@
+# bash script for doing word count in Git Bash
+
 cd "/g/Other computers/My MacBook Air/Documents/Corpora/_corpusbali/Surat Kabar/Orti Bali/2006"
 for file in *.txt; do echo "$(wc -w < "$file") words in $file"; done > "/c/Users/GRajeg/OneDrive - Nexus365/Documents/Research/bali-orti-corpus-file-info/word_counts_2006.txt"
 

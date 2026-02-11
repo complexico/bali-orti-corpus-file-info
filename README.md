@@ -24,11 +24,12 @@ the news texts published in the old Orti Bali webpage between **2006 and
 It is important to note that the [current Orti
 Bali](https://balitv.tv/category/news/orti-bali/) webpage does not host
 the complete archive of the newspaper articles that are part of this
-corpus. The old Orti Bali webpage only hosted articles published between
-the stated periods above (i.e., between 2006 and 2013) and stopped
-working in 2014.
+corpus. The old Orti Bali webpage (I worked with) only hosted articles
+published between the stated periods above (i.e., between 2006 and 2013)
+and stopped working in 2014.
 
 For copyright reasons, I cannot share the actual text files of the
 corpus, and I only use this corpus for my personal research. However, I
 provide the file information (i.e., text title, file size, modification
-time, etc.) in the `baliorti_file_info.tsv` file.
+time, etc.) in the `baliorti_file_info.tsv` file. The word counts of
+each text file are also provided in the `baliorti_wcount.tsv` file.
